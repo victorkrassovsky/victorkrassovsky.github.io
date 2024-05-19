@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Hi"
+date:   2024-05-17 23:26:45 -0700
+categories: bruh
+---
+First `post`! I don't know what I'm doing. 

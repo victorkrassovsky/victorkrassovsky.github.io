@@ -4,4 +4,4 @@ title: CV
 permalink: /cv/
 ---
 
-Available as a pdf also [comment]: <> (add pdf and rest)
+Available as a [pdf](/assets/victorkrassovsky_cv.pdf)
