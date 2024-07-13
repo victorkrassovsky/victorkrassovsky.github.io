@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-12T14:54:05-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">About</title><subtitle>Notesheets on various topics
-</subtitle><author><name>Victor Krassovsky</name></author><entry><title type="html">Quantum Computing</title><link href="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html" rel="alternate" type="text/html" title="Quantum Computing" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/quantum_computing</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html"><![CDATA[<p>Quantum information systems are built up of four components:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-13T12:46:52-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
+</subtitle><author><name>Victor Krassovsky</name></author><entry><title type="html">Quantum Computing</title><link href="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html" rel="alternate" type="text/html" title="Quantum Computing" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/quantum_computing</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html"><![CDATA[<h2 id="quantum-systems">Quantum Systems</h2>
+<p>Quantum information systems are built up of four components:</p>
 <ol>
   <li>State</li>
   <li>Dynamics</li>
@@ -7,4 +8,8 @@
   <li>Observables</li>
 </ol>
 
-<p>States are made up of qubits which are complex vectors in a hilbert space $\mathcal{H}$ which is just a vector space equiped with an inner product.</p>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum information systems are built up of four components: State Dynamics Measurement Observables]]></summary></entry></feed>
+<p>States are made up of qubits which are complex vectors in a hilbert space $\mathcal{H}$ which is just a vector space equiped with an inner product. We use Dirac notation to denote the state of these qubits, e.g. $|\psi \rangle $ with $|\psi|^2=1$, and the inner product of two states is $\langle \psi | \varphi\rangle$. In two dimensions, a basis can be formed with the states $| 0 \rangle$ and $| 1\rangle$ and the other states can be written as a complex linear combination of this basis. Hence, for any $| \psi \rangle \in \mathcal{H}$,</p>
+
+\[| \psi \rangle = \alpha |0\rangle + \beta |1\rangle\]
+
+<p>with the condition that $|\alpha|^2 + |\beta|^2 = 1$.</p>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: State Dynamics Measurement Observables]]></summary></entry></feed>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Quantum Computing · About</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Quantum Computing · Notebook</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Notesheets on various topics
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Victor Krassovsky"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
@@ -68,7 +68,7 @@
             <li class="chapter" data-level="1.1" data-path="">
             
                 <a href="/" onclick="pageScrollToTop(this)">
-                    About
+                    Notebook
                 </a>
             </li>
 
@@ -90,7 +90,7 @@
                                 </a>
                                 
                                     
-                                        
+                                        <ul><li><a href="#quantum-systems" onclick="mobilePageScrollToAnchor(this)" >Quantum Systems</a></li></ul>
 
                                     
                                 
@@ -148,7 +148,8 @@
                         <h1 id="/jekyll/quantum_computing">Quantum Computing</h1>
                     
 
-                    <p>Quantum information systems are built up of four components:</p>
+                    <h2 id="quantum-systems">Quantum Systems</h2>
+<p>Quantum information systems are built up of four components:</p>
 <ol>
   <li>State</li>
   <li>Dynamics</li>
@@ -156,7 +157,12 @@
   <li>Observables</li>
 </ol>
 
-<p>States are made up of qubits which are complex vectors in a hilbert space $\mathcal{H}$ which is just a vector space equiped with an inner product.</p>
+<p>States are made up of qubits which are complex vectors in a hilbert space $\mathcal{H}$ which is just a vector space equiped with an inner product. We use Dirac notation to denote the state of these qubits, e.g. $|\psi \rangle $ with $|\psi|^2=1$, and the inner product of two states is $\langle \psi | \varphi\rangle$. In two dimensions, a basis can be formed with the states $| 0 \rangle$ and $| 1\rangle$ and the other states can be written as a complex linear combination of this basis. Hence, for any $| \psi \rangle \in \mathcal{H}$,</p>
+
+\[| \psi \rangle = \alpha |0\rangle + \beta |1\rangle\]
+
+<p>with the condition that $|\alpha|^2 + |\beta|^2 = 1$.</p>
+
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -245,7 +251,7 @@ window.MathJax = {
 </script>
 
 
-                        <a href="/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: About">
+                        <a href="/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Notebook">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
@@ -346,7 +352,7 @@ window.MathJax = {
             "readme": "README.md",
         },
         "variables": {},
-        "title": "About",
+        "title": "Notebook",
         "language": "en",
         "gitbook": "*"
     },
@@ -357,7 +363,7 @@ window.MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-12 14:54:05 -0700"
+        "time": "2024-07-13 12:46:52 -0700"
     },
     "basePath": "",
     "book": {
