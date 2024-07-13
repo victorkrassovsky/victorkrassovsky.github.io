@@ -90,7 +90,7 @@
                                 </a>
                                 
                                     
-                                        <ul><li><a href="#quantum-systems" onclick="mobilePageScrollToAnchor(this)" >Quantum Systems</a></li></ul>
+                                        <ul><li><a href="#quantum-systems" onclick="mobilePageScrollToAnchor(this)" >Quantum Systems</a><ul><li><a href="#states" onclick="mobilePageScrollToAnchor(this)" >States</a></li><li><a href="#dynamics" onclick="mobilePageScrollToAnchor(this)" >Dynamics</a></li><li><a href="#measurements" onclick="mobilePageScrollToAnchor(this)" >Measurements</a></li><li><a href="#observables" onclick="mobilePageScrollToAnchor(this)" >Observables</a></li></ul></li></ul>
 
                                     
                                 
@@ -151,18 +151,51 @@
                     <h2 id="quantum-systems">Quantum Systems</h2>
 <p>Quantum information systems are built up of four components:</p>
 <ol>
-  <li>State</li>
+  <li>States</li>
   <li>Dynamics</li>
-  <li>Measurement</li>
+  <li>Measurements</li>
   <li>Observables</li>
 </ol>
 
-<p>States are made up of qubits which are complex vectors in a hilbert space $\mathcal{H}$ which is just a vector space equiped with an inner product. We use Dirac notation to denote the state of these qubits, e.g. $|\psi \rangle $ with $|\psi|^2=1$, and the inner product of two states is $\langle \psi | \varphi\rangle$. In two dimensions, a basis can be formed with the states $| 0 \rangle$ and $| 1\rangle$ and the other states can be written as a complex linear combination of this basis. Hence, for any $| \psi \rangle \in \mathcal{H}$,</p>
+<h3 id="states">States</h3>
+<p>States are made up of qubits which are complex vectors in a Hilbert space $\mathcal{H}$ which is just a vector space equiped with an inner product. We use Dirac notation to denote the state of these qubits, e.g. $|\psi \rangle $ with $|\psi|^2=1$, and the inner product of two states is $\langle \psi | \varphi\rangle$. In two dimensions, a basis can be formed with the states $| 0 \rangle$ and $| 1\rangle$ and the other states can be written as a complex linear combination of this basis. Hence, for any $| \psi \rangle \in \mathcal{H}$,</p>
 
 \[| \psi \rangle = \alpha |0\rangle + \beta |1\rangle\]
 
 <p>with the condition that $|\alpha|^2 + |\beta|^2 = 1$.</p>
 
+<h3 id="dynamics">Dynamics</h3>
+<p>Dynamics describe how the quantum system changes over time. They are usually characterized by gates which are linear transformations of the states. Some common gates are the Pauli matrices:</p>
+
+\[X=\begin{bmatrix}0 &amp; 1\\ 1 &amp; 0\end{bmatrix}, Y=\begin{bmatrix}0 &amp; -i\\ i &amp; 0\end{bmatrix}, Z = \begin{bmatrix}1 &amp; 0\\ 0 &amp; -1\end{bmatrix}\]
+
+<p>Quantum gates are unitary and hermitian. Another important matrix is the Hadmard transformation</p>
+
+\[H=\frac{1}{\sqrt{2}}\begin{bmatrix}1 &amp; 1\\ 1 &amp; -1 \end{bmatrix}\]
+
+<p>which transforms the orthanormal standard basis to another orthanormal basis $H|0\rangle =|+\rangle$, $H|1\rangle =|-\rangle$.</p>
+
+<h3 id="measurements">Measurements</h3>
+<p>Measurements are the way by which observations are made about a quantum system. They are described by a positive operator-valued measure (POVM) whose values are positive semi-definite operators. In other words, with our Hilbert space $\mathcal{H}$, we associate a measure $ { M_i } $ with the property</p>
+
+\[\sum M_i = I.\]
+
+<p>When a state $|\psi\rangle$ is measured, an outcome is determined with some probability. The probability is determined via Born’s rule:</p>
+
+\[p_i = \langle \psi | M_i | \psi \rangle\]
+
+<p>We can verify that this is indeed a probability distribution as each probability is nonnegative and</p>
+
+\[\begin{align*}
+\sum p_i &amp;= \sum \langle \psi | M_i | \psi \rangle\\
+&amp;= \langle \psi | \sum M_i |\psi \rangle\\
+&amp;= \langle \psi | I | \psi \rangle\\
+&amp;= |\psi|^2\\
+&amp;= 1
+\end{align*}\]
+
+<h3 id="observables">Observables</h3>
+<p>Observables are physical properties that can be observed about the system. They are represented by</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -363,7 +396,7 @@ window.MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-13 12:46:52 -0700"
+        "time": "2024-07-13 16:15:50 -0700"
     },
     "basePath": "",
     "book": {
