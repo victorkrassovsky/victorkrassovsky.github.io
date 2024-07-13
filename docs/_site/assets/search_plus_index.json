@@ -2,5 +2,5 @@
     "title": "Quantum Computing",
     "keywords": "Jekyll",
     "url": "/jekyll/2024-07-12-quantum_computing.html",
-    "body": "Asd"
+    "body": "Quantum information systems are built up of four components: State Dynamics Measurement Observables States are made up of qubits which are complex vectors in a hilbert space $\\mathcal{H}$ which is just a vector space equiped with an inner product."
   }}
