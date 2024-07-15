@@ -54,4 +54,4 @@ $$
 $$
 
 ### Observables
-Observables are physical properties that can be observed about the system. They are represented by 
+Observables are physical properties that can be observed about a system. They are represented by some sequence of operators applied to the state. 
