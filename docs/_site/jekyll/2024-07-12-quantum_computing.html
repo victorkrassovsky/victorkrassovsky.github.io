@@ -90,7 +90,7 @@
                                 </a>
                                 
                                     
-                                        <ul><li><a href="#quantum-systems" onclick="mobilePageScrollToAnchor(this)" >Quantum Systems</a><ul><li><a href="#states" onclick="mobilePageScrollToAnchor(this)" >States</a></li><li><a href="#dynamics" onclick="mobilePageScrollToAnchor(this)" >Dynamics</a></li><li><a href="#measurements" onclick="mobilePageScrollToAnchor(this)" >Measurements</a></li><li><a href="#observables" onclick="mobilePageScrollToAnchor(this)" >Observables</a></li></ul></li></ul>
+                                        <ul><li><a href="#quantum-systems" onclick="mobilePageScrollToAnchor(this)" >Quantum Systems</a><ul><li><a href="#states" onclick="mobilePageScrollToAnchor(this)" >States</a></li><li><a href="#dynamics" onclick="mobilePageScrollToAnchor(this)" >Dynamics</a></li><li><a href="#measurements" onclick="mobilePageScrollToAnchor(this)" >Measurements</a></li><li><a href="#observables" onclick="mobilePageScrollToAnchor(this)" >Observables</a></li></ul></li><li><a href="#single-qubit" onclick="mobilePageScrollToAnchor(this)" >Single Qubit</a><ul><li><a href="#experiment" onclick="mobilePageScrollToAnchor(this)" >Experiment</a></li><li><a href="#transformations" onclick="mobilePageScrollToAnchor(this)" >Transformations</a></li></ul></li></ul>
 
                                     
                                 
@@ -195,7 +195,35 @@
 \end{align*}\]
 
 <h3 id="observables">Observables</h3>
-<p>Observables are physical properties that can be observed about the system. They are represented by</p>
+<p>Observables are physical properties that can be observed about a system. They are represented by self-adjoint operators on the system. We write</p>
+
+\[A = A^{t} = \sum_i a_i M_i\]
+
+<p>for some coefficients $a_i\in \mathbb{R}$ and $M_i$ the set of POVMs. We write the expectation of $A$ with respect to sum state $| \psi \rangle$ as</p>
+
+\[\langle A\rangle_\psi = \langle \psi | A |\psi\rangle = \langle \psi |\sum_i a_i M_i|\psi \rangle = \sum_i a_ip_i.\]
+
+<h2 id="single-qubit">Single Qubit</h2>
+
+<h3 id="experiment">Experiment</h3>
+
+<p>We write the standard normal basis vectors in two dimensions</p>
+
+\[|0 \rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}, |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}.\]
+
+<p>For any state $|\psi \rangle \in \mathcal{H}_2=\text{span} (|0\rangle, |1\rangle)$ we can write</p>
+
+\[|\psi \rangle = \alpha |0\rangle + \beta |1\rangle\]
+
+<p>for complex $\alpha, \beta$ with $|\alpha|^2 + |\beta|^2=1$. With this condition, we can parameterize $\alpha = e^{ia}\cos \frac{\theta}{2}$ and $\beta = e^{ib}\sin\frac{\theta}{2}$ for real $a,b,\theta$. Furthermore, we can observe that if $|\tilde{\psi}\rangle = e^{i\gamma}|\psi\rangle$, then for some POVM $M$,</p>
+
+\[\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle psi | M | \psi \rangle\]
+
+<p>so $|\psi \rangle$ and $|\tilde{\psi}\rangle$ are indistinguishable as far as we can measure. In this sense, they are the same, so we can write $\phi=b-a$. Hence,</p>
+
+\[|\psi \rangle = \cos \frac{\theta}{2} + e^{i\phi}\sin\frac{\theta}{2}.\]
+
+<h3 id="transformations">Transformations</h3>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -396,7 +424,7 @@ window.MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-15 13:30:05 -0700"
+        "time": "2024-07-15 23:24:19 -0700"
     },
     "basePath": "",
     "book": {

@@ -54,4 +54,32 @@ $$
 $$
 
 ### Observables
-Observables are physical properties that can be observed about a system. They are represented by some sequence of operators applied to the state. 
+Observables are physical properties that can be observed about a system. They are represented by self-adjoint operators on the system. We write 
+
+$$A = A^{t} = \sum_i a_i M_i$$
+
+for some coefficients $a_i\in \mathbb{R}$ and $M_i$ the set of POVMs. We write the expectation of $A$ with respect to sum state $\| \psi \rangle$ as
+
+$$\langle A\rangle_\psi = \langle \psi | A |\psi\rangle = \langle \psi |\sum_i a_i M_i|\psi \rangle = \sum_i a_ip_i.$$
+
+## Single Qubit
+
+### Experiment
+
+We write the standard normal basis vectors in two dimensions
+
+$$|0 \rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}, |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}.$$
+
+For any state $\|\psi \rangle \in \mathcal{H}_2=\text{span} (\|0\rangle, \|1\rangle)$ we can write
+
+$$|\psi \rangle = \alpha |0\rangle + \beta |1\rangle$$
+
+for complex $\alpha, \beta$ with $\|\alpha\|^2 + \|\beta\|^2=1$. With this condition, we can parameterize $\alpha = e^{ia}\cos \frac{\theta}{2}$ and $\beta = e^{ib}\sin\frac{\theta}{2}$ for real $a,b,\theta$. Furthermore, we can observe that if $\|\tilde{\psi}\rangle = e^{i\gamma}\|\psi\rangle$, then for some POVM $M$, 
+
+$$\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle psi | M | \psi \rangle$$
+
+so $\|\psi \rangle$ and $\|\tilde{\psi}\rangle$ are indistinguishable as far as we can measure. In this sense, they are the same, so we can write $\phi=b-a$. Hence, 
+
+$$|\psi \rangle = \cos \frac{\theta}{2} + e^{i\phi}\sin\frac{\theta}{2}.$$
+
+### Transformations
