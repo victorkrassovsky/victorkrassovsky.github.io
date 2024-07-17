@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-17T13:54:09-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-15T23:24:19-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
 </subtitle><author><name>Victor Krassovsky</name></author><entry><title type="html">Quantum Computing</title><link href="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html" rel="alternate" type="text/html" title="Quantum Computing" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/quantum_computing</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html"><![CDATA[<h2 id="quantum-systems">Quantum Systems</h2>
 <p>Quantum information systems are built up of four components:</p>
 <ol>
@@ -68,12 +68,10 @@
 
 <p>for complex $\alpha, \beta$ with $|\alpha|^2 + |\beta|^2=1$. With this condition, we can parameterize $\alpha = e^{ia}\cos \frac{\theta}{2}$ and $\beta = e^{ib}\sin\frac{\theta}{2}$ for real $a,b,\theta$. Furthermore, we can observe that if $|\tilde{\psi}\rangle = e^{i\gamma}|\psi\rangle$, then for some POVM $M$,</p>
 
-\[\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle \psi | M | \psi \rangle\]
+\[\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle psi | M | \psi \rangle\]
 
 <p>so $|\psi \rangle$ and $|\tilde{\psi}\rangle$ are indistinguishable as far as we can measure. In this sense, they are the same, so we can write $\phi=b-a$. Hence,</p>
 
 \[|\psi \rangle = \cos \frac{\theta}{2} + e^{i\phi}\sin\frac{\theta}{2}.\]
 
-<h3 id="transformations">Transformations</h3>
-
-<p>As we said before, transformations are characterized by unitary linear operators called quantum logic gates.</p>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: States Dynamics Measurements Observables]]></summary></entry></feed>
+<h3 id="transformations">Transformations</h3>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: States Dynamics Measurements Observables]]></summary></entry></feed>
