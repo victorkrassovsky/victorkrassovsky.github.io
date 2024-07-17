@@ -76,10 +76,15 @@ $$|\psi \rangle = \alpha |0\rangle + \beta |1\rangle$$
 
 for complex $\alpha, \beta$ with $\|\alpha\|^2 + \|\beta\|^2=1$. With this condition, we can parameterize $\alpha = e^{ia}\cos \frac{\theta}{2}$ and $\beta = e^{ib}\sin\frac{\theta}{2}$ for real $a,b,\theta$. Furthermore, we can observe that if $\|\tilde{\psi}\rangle = e^{i\gamma}\|\psi\rangle$, then for some POVM $M$, 
 
-$$\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle psi | M | \psi \rangle$$
+$$\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle \psi | M | \psi \rangle$$
 
 so $\|\psi \rangle$ and $\|\tilde{\psi}\rangle$ are indistinguishable as far as we can measure. In this sense, they are the same, so we can write $\phi=b-a$. Hence, 
 
 $$|\psi \rangle = \cos \frac{\theta}{2} + e^{i\phi}\sin\frac{\theta}{2}.$$
 
 ### Transformations
+
+As we said before, transformations are characterized by unitary linear operators called quantum logic gates. 
+
+
+

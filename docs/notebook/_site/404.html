@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Quantum Computing · Notebook</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Notebook</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Notesheets on various topics
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Victor Krassovsky"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
@@ -25,9 +25,9 @@
 
 
 
-            <link rel="prev" href="/" />
-        
 
+        
+            <link rel="next" href="/jekyll/2024-07-12-quantum_computing.html" />
         
     </head>
     <body>
@@ -83,15 +83,12 @@
 
                         
                             
-                            <li class="chapter active" data-level="1.2" data-path="/jekyll/2024-07-12-quantum_computing.html">
+                            <li class="chapter" data-level="1.1" data-path="/jekyll/2024-07-12-quantum_computing.html">
                             
                                 <a href="/jekyll/2024-07-12-quantum_computing.html" onclick="pageScrollToTop(this)">
                                     Quantum Computing
                                 </a>
                                 
-                                    
-                                        <ul><li><a href="#quantum-systems" onclick="mobilePageScrollToAnchor(this)" >Quantum Systems</a><ul><li><a href="#states" onclick="mobilePageScrollToAnchor(this)" >States</a></li><li><a href="#dynamics" onclick="mobilePageScrollToAnchor(this)" >Dynamics</a></li><li><a href="#measurements" onclick="mobilePageScrollToAnchor(this)" >Measurements</a></li><li><a href="#observables" onclick="mobilePageScrollToAnchor(this)" >Observables</a></li></ul></li><li><a href="#single-qubit" onclick="mobilePageScrollToAnchor(this)" >Single Qubit</a><ul><li><a href="#experiment" onclick="mobilePageScrollToAnchor(this)" >Experiment</a></li><li><a href="#transformations" onclick="mobilePageScrollToAnchor(this)" >Transformations</a></li></ul></li></ul>
-
                                     
                                 
                             </li>
@@ -132,7 +129,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Quantum Computing</a>
+                            <a href="." >Notebook</a>
                         
                     </h1>
                 </div>
@@ -145,85 +142,29 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/jekyll/quantum_computing">Quantum Computing</h1>
+                        <h1 id="">Notebook</h1>
                     
 
-                    <h2 id="quantum-systems">Quantum Systems</h2>
-<p>Quantum information systems are built up of four components:</p>
-<ol>
-  <li>States</li>
-  <li>Dynamics</li>
-  <li>Measurements</li>
-  <li>Observables</li>
-</ol>
+                    <style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
 
-<h3 id="states">States</h3>
-<p>States are made up of qubits which are complex vectors in a Hilbert space $\mathcal{H}$ which is just a vector space equiped with an inner product. We use Dirac notation to denote the state of these qubits, e.g. $|\psi \rangle $ with $|\psi|^2=1$, and the inner product of two states is $\langle \psi | \varphi\rangle$. In two dimensions, a basis can be formed with the states $| 0 \rangle$ and $| 1\rangle$ and the other states can be written as a complex linear combination of this basis. Hence, for any $| \psi \rangle \in \mathcal{H}$,</p>
+<div class="container">
+  <h1>404</h1>
 
-\[| \psi \rangle = \alpha |0\rangle + \beta |1\rangle\]
-
-<p>with the condition that $|\alpha|^2 + |\beta|^2 = 1$.</p>
-
-<h3 id="dynamics">Dynamics</h3>
-<p>Dynamics describe how the quantum system changes over time. They are usually characterized by gates which are linear transformations of the states. Some common gates are the Pauli matrices:</p>
-
-\[X=\begin{bmatrix}0 &amp; 1\\ 1 &amp; 0\end{bmatrix}, Y=\begin{bmatrix}0 &amp; -i\\ i &amp; 0\end{bmatrix}, Z = \begin{bmatrix}1 &amp; 0\\ 0 &amp; -1\end{bmatrix}\]
-
-<p>Quantum gates are unitary and hermitian. Another important matrix is the Hadmard transformation</p>
-
-\[H=\frac{1}{\sqrt{2}}\begin{bmatrix}1 &amp; 1\\ 1 &amp; -1 \end{bmatrix}\]
-
-<p>which transforms the orthanormal standard basis to another orthanormal basis $H|0\rangle =|+\rangle$, $H|1\rangle =|-\rangle$.</p>
-
-<h3 id="measurements">Measurements</h3>
-<p>Measurements are the way by which observations are made about a quantum system. They are described by a positive operator-valued measure (POVM) whose values are positive semi-definite operators. In other words, with our Hilbert space $\mathcal{H}$, we associate a measure $ { M_i } $ with the property</p>
-
-\[\sum M_i = I.\]
-
-<p>When a state $|\psi\rangle$ is measured, an outcome is determined with some probability. The probability is determined via Born’s rule:</p>
-
-\[p_i = \langle \psi | M_i | \psi \rangle\]
-
-<p>We can verify that this is indeed a probability distribution as each probability is nonnegative and</p>
-
-\[\begin{align*}
-\sum p_i &amp;= \sum \langle \psi | M_i | \psi \rangle\\
-&amp;= \langle \psi | \sum M_i |\psi \rangle\\
-&amp;= \langle \psi | I | \psi \rangle\\
-&amp;= |\psi|^2\\
-&amp;= 1
-\end{align*}\]
-
-<h3 id="observables">Observables</h3>
-<p>Observables are physical properties that can be observed about a system. They are represented by self-adjoint operators on the system. We write</p>
-
-\[A = A^{t} = \sum_i a_i M_i\]
-
-<p>for some coefficients $a_i\in \mathbb{R}$ and $M_i$ the set of POVMs. We write the expectation of $A$ with respect to sum state $| \psi \rangle$ as</p>
-
-\[\langle A\rangle_\psi = \langle \psi | A |\psi\rangle = \langle \psi |\sum_i a_i M_i|\psi \rangle = \sum_i a_ip_i.\]
-
-<h2 id="single-qubit">Single Qubit</h2>
-
-<h3 id="experiment">Experiment</h3>
-
-<p>We write the standard normal basis vectors in two dimensions</p>
-
-\[|0 \rangle = \begin{pmatrix}1 \\ 0\end{pmatrix}, |1\rangle = \begin{pmatrix} 0 \\ 1 \end{pmatrix}.\]
-
-<p>For any state $|\psi \rangle \in \mathcal{H}_2=\text{span} (|0\rangle, |1\rangle)$ we can write</p>
-
-\[|\psi \rangle = \alpha |0\rangle + \beta |1\rangle\]
-
-<p>for complex $\alpha, \beta$ with $|\alpha|^2 + |\beta|^2=1$. With this condition, we can parameterize $\alpha = e^{ia}\cos \frac{\theta}{2}$ and $\beta = e^{ib}\sin\frac{\theta}{2}$ for real $a,b,\theta$. Furthermore, we can observe that if $|\tilde{\psi}\rangle = e^{i\gamma}|\psi\rangle$, then for some POVM $M$,</p>
-
-\[\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle psi | M | \psi \rangle\]
-
-<p>so $|\psi \rangle$ and $|\tilde{\psi}\rangle$ are indistinguishable as far as we can measure. In this sense, they are the same, so we can write $\phi=b-a$. Hence,</p>
-
-\[|\psi \rangle = \cos \frac{\theta}{2} + e^{i\phi}\sin\frac{\theta}{2}.\]
-
-<h3 id="transformations">Transformations</h3>
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -256,38 +197,6 @@ window.MathJax = {
 
 <!-- introduce per-page mermaid support -->
 
-    <script>
-    function render_mermaid() {
-        mermaid.initialize({
-            startOnLoad: false,
-            theme: "default",
-        });
-        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-    }
-
-    function initialize_mermaid() {
-        if (document.readyState === "loading") {
-            // Loading hasn't finished yet
-            document.addEventListener("DOMContentLoaded", render_mermaid);
-        } else {
-            // `DOMContentLoaded` has already fired
-            render_mermaid();
-        }
-    }
-
-    if (window.mermaid_script && window.mermaid) {
-        initialize_mermaid();
-    } else {
-        window.mermaid_script = document.createElement("script");
-        mermaid_script.onload = initialize_mermaid;
-        document.head.appendChild(mermaid_script);
-        mermaid_script.defer = true;
-        mermaid_script.id = 'mermaid-script';
-        mermaid_script.src = 'https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js';
-    }
-</script>
-
-
 
 <!-- introduce mathjax support -->
 <script>
@@ -311,12 +220,14 @@ window.MathJax = {
     }
 </script>
 
+<a href="/" class="navigation navigation-pre navigation-unique">
+                        <i class="fa"></i>
+                    </a>
 
-                        <a href="/" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Notebook">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
                     
-
+                        <a href="" class="navigation navigation-next navigation-unique" aria-label="Next page: ">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
                     
                 </div>
             </div>
@@ -329,6 +240,17 @@ window.MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+
+        
+        "next": {
+            "title": "Quantum Computing",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_posts/2024-07-12-quantum_computing.md",
+            "ref": "_posts/2024-07-12-quantum_computing.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -418,13 +340,13 @@ window.MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_posts/2024-07-12-quantum_computing.md",
-        "mtime": "2024-07-12 00:00:00 -0700",
+        "path": "404.html",
+        "mtime": "",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-15 23:24:19 -0700"
+        "time": "2024-07-17 13:54:09 -0700"
     },
     "basePath": "",
     "book": {
