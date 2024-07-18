@@ -64,7 +64,7 @@ $$\langle A\rangle_\psi = \langle \psi | A |\psi\rangle = \langle \psi |\sum_i a
 
 ## Single Qubit
 
-### Experiment
+###Experiment
 
 We write the standard normal basis vectors in two dimensions
 
@@ -76,10 +76,32 @@ $$|\psi \rangle = \alpha |0\rangle + \beta |1\rangle$$
 
 for complex $\alpha, \beta$ with $\|\alpha\|^2 + \|\beta\|^2=1$. With this condition, we can parameterize $\alpha = e^{ia}\cos \frac{\theta}{2}$ and $\beta = e^{ib}\sin\frac{\theta}{2}$ for real $a,b,\theta$. Furthermore, we can observe that if $\|\tilde{\psi}\rangle = e^{i\gamma}\|\psi\rangle$, then for some POVM $M$, 
 
-$$\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle psi | M | \psi \rangle$$
+$$\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle \psi | M | \psi \rangle$$
 
 so $\|\psi \rangle$ and $\|\tilde{\psi}\rangle$ are indistinguishable as far as we can measure. In this sense, they are the same, so we can write $\phi=b-a$. Hence, 
 
 $$|\psi \rangle = \cos \frac{\theta}{2} + e^{i\phi}\sin\frac{\theta}{2}.$$
 
-### Transformations
+
+### Mixed States
+
+Mixed states describe qubits that are have probabilistic combinations of pure states, or qubits that are entangled with other qubits. We will discuss entanglement later as it relies on understanding the interaction of multiple qubits, but both situations are impossible to describe with ordinary wave functions. Instead they are described by density matrices.
+
+Flip a coin with probability of heads $q_0$ and tails $q_1$ and based on the result release a particle with state $\|\psi_1\rangle$ or $\|\psi_2\rangle$. Then, for a given POVM $M_i$, the associated probability is
+
+$$
+p_i = q_0\langle \psi_0 | M_i | \psi_1\rangle + q_1\langle \psi_0 | M_i | \psi_1\rangle.
+$$
+
+Now we use the trick that $\text{tr} A\|\psi \rangle \langle \psi \|=\langle \psi \| A\|\psi\rangle$ to get
+
+$$
+\begin{align*}
+p_i &= q_0 \text{tr}(M_i |\psi_0\rangle \langle\psi_0 |)+q_1\text{tr}(M_i |\psi_1\rangle \langle \psi_1 | )\\
+&= \text{tr}(M_i (q_0|\psi_0\rangle \langle \psi_0 |+q_1|\psi_1\rangle\langle \psi_1|)).
+\end{align*}
+$$
+
+We call the matrix $q_0\|\psi_0\rangle \langle \psi_0 \|+q_1 \|\psi_1\rangle\langle \psi_1\|$ the density matrix that describes the state of the qubit. In general, if a particle has $\psi_i$ with probability $q_i$, the density matrix is
+
+$$\rho = \sum_i q_i |\psi_i\rangle \langle \psi_i |.$$

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-15T23:24:19-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-17T15:14:06-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
 </subtitle><author><name>Victor Krassovsky</name></author><entry><title type="html">Quantum Computing</title><link href="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html" rel="alternate" type="text/html" title="Quantum Computing" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/quantum_computing</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html"><![CDATA[<h2 id="quantum-systems">Quantum Systems</h2>
 <p>Quantum information systems are built up of four components:</p>
 <ol>
@@ -56,7 +56,7 @@
 
 <h2 id="single-qubit">Single Qubit</h2>
 
-<h3 id="experiment">Experiment</h3>
+<p>###Experiment</p>
 
 <p>We write the standard normal basis vectors in two dimensions</p>
 
@@ -68,10 +68,27 @@
 
 <p>for complex $\alpha, \beta$ with $|\alpha|^2 + |\beta|^2=1$. With this condition, we can parameterize $\alpha = e^{ia}\cos \frac{\theta}{2}$ and $\beta = e^{ib}\sin\frac{\theta}{2}$ for real $a,b,\theta$. Furthermore, we can observe that if $|\tilde{\psi}\rangle = e^{i\gamma}|\psi\rangle$, then for some POVM $M$,</p>
 
-\[\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle psi | M | \psi \rangle\]
+\[\langle \tilde{\psi} | M | \tilde{\psi}\rangle = \langle \psi | M | \psi \rangle\]
 
 <p>so $|\psi \rangle$ and $|\tilde{\psi}\rangle$ are indistinguishable as far as we can measure. In this sense, they are the same, so we can write $\phi=b-a$. Hence,</p>
 
 \[|\psi \rangle = \cos \frac{\theta}{2} + e^{i\phi}\sin\frac{\theta}{2}.\]
 
-<h3 id="transformations">Transformations</h3>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: States Dynamics Measurements Observables]]></summary></entry></feed>
+<h3 id="mixed-states">Mixed States</h3>
+
+<p>Mixed states describe qubits that are have probabilistic combinations of pure states, or qubits that are entangled with other qubits. We will discuss entanglement later as it relies on understanding the interaction of multiple qubits, but both situations are impossible to describe with ordinary wave functions. Instead they are described by density matrices.</p>
+
+<p>Flip a coin with probability of heads $q_0$ and tails $q_1$ and based on the result release a particle with state $|\psi_1\rangle$ or $|\psi_2\rangle$. Then, for a given POVM $M_i$, the associated probability is</p>
+
+\[p_i = q_0\langle \psi_0 | M_i | \psi_1\rangle + q_1\langle \psi_0 | M_i | \psi_1\rangle.\]
+
+<p>Now we use the trick that $\text{tr} A|\psi \rangle \langle \psi |=\langle \psi | A|\psi\rangle$ to get</p>
+
+\[\begin{align*}
+p_i &amp;= q_0 \text{tr}(M_i |\psi_0\rangle \langle\psi_0 |)+q_1\text{tr}(M_i |\psi_1\rangle \langle \psi_1 | )\\
+&amp;= \text{tr}(M_i (q_0|\psi_0\rangle \langle \psi_0 |+q_1|\psi_1\rangle\langle \psi_1|)).
+\end{align*}\]
+
+<p>We call the matrix $q_0|\psi_0\rangle \langle \psi_0 |+q_1 |\psi_1\rangle\langle \psi_1|$ the density matrix that describes the state of the qubit. In general, if a particle has $\psi_i$ with probability $q_i$, the density matrix is</p>
+
+\[\rho = \sum_i q_i |\psi_i\rangle \langle \psi_i |.\]]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: States Dynamics Measurements Observables]]></summary></entry></feed>
