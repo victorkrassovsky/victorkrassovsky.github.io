@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-17T15:14:06-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-19T14:52:25-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
 </subtitle><author><name>Victor Krassovsky</name></author><entry><title type="html">Quantum Computing</title><link href="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html" rel="alternate" type="text/html" title="Quantum Computing" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/quantum_computing</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html"><![CDATA[<h2 id="quantum-systems">Quantum Systems</h2>
 <p>Quantum information systems are built up of four components:</p>
 <ol>
@@ -56,7 +56,7 @@
 
 <h2 id="single-qubit">Single Qubit</h2>
 
-<p>###Experiment</p>
+<h3 id="experiment">Experiment</h3>
 
 <p>We write the standard normal basis vectors in two dimensions</p>
 
@@ -89,6 +89,8 @@ p_i &amp;= q_0 \text{tr}(M_i |\psi_0\rangle \langle\psi_0 |)+q_1\text{tr}(M_i |\
 &amp;= \text{tr}(M_i (q_0|\psi_0\rangle \langle \psi_0 |+q_1|\psi_1\rangle\langle \psi_1|)).
 \end{align*}\]
 
-<p>We call the matrix $q_0|\psi_0\rangle \langle \psi_0 |+q_1 |\psi_1\rangle\langle \psi_1|$ the density matrix that describes the state of the qubit. In general, if a particle has $\psi_i$ with probability $q_i$, the density matrix is</p>
+<p>We call the matrix $q_0|\psi_0\rangle \langle \psi_0 |+q_1 |\psi_1\rangle\langle \psi_1|$ the density matrix that describes the state of the qubit. In general, if a particle has state $|\psi_i\rangle$ with probability $q_i$, the density matrix is</p>
 
-\[\rho = \sum_i q_i |\psi_i\rangle \langle \psi_i |.\]]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: States Dynamics Measurements Observables]]></summary></entry></feed>
+\[\rho = \sum_i q_i |\psi_i\rangle \langle \psi_i |.\]
+
+<h3 id="bloch-sphere">Bloch Sphere</h3>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: States Dynamics Measurements Observables]]></summary></entry></feed>
