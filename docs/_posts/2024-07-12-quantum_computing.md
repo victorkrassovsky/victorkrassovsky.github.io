@@ -64,7 +64,7 @@ $$\langle A\rangle_\psi = \langle \psi | A |\psi\rangle = \langle \psi |\sum_i a
 
 ## Single Qubit
 
-###Experiment
+### Experiment
 
 We write the standard normal basis vectors in two dimensions
 
@@ -102,6 +102,8 @@ p_i &= q_0 \text{tr}(M_i |\psi_0\rangle \langle\psi_0 |)+q_1\text{tr}(M_i |\psi_
 \end{align*}
 $$
 
-We call the matrix $q_0\|\psi_0\rangle \langle \psi_0 \|+q_1 \|\psi_1\rangle\langle \psi_1\|$ the density matrix that describes the state of the qubit. In general, if a particle has $\psi_i$ with probability $q_i$, the density matrix is
+We call the matrix $q_0\|\psi_0\rangle \langle \psi_0 \|+q_1 \|\psi_1\rangle\langle \psi_1\|$ the density matrix that describes the state of the qubit. In general, if a particle has state $\|\psi_i\rangle$ with probability $q_i$, the density matrix is
 
 $$\rho = \sum_i q_i |\psi_i\rangle \langle \psi_i |.$$
+
+### Bloch Sphere
