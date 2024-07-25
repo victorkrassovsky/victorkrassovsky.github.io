@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" >
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Notebook</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Cryptography · Notebook</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Notesheets on various topics
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Victor Krassovsky"><link rel="stylesheet" href="/assets/gitbook/style.css">
 <link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
@@ -25,9 +25,9 @@
 
 
 
-
+            <link rel="prev" href="/jekyll/2024-07-12-quantum_computing.html" />
         
-            <link rel="next" href="/jekyll/2024-07-12-quantum_computing.html" />
+
         
     </head>
     <body>
@@ -94,12 +94,15 @@
                             </li>
                         
                             
-                            <li class="chapter" data-level="1.1" data-path="/jekyll/2024-07-12-cryptography.html">
+                            <li class="chapter active" data-level="1.2" data-path="/jekyll/2024-07-12-cryptography.html">
                             
                                 <a href="/jekyll/2024-07-12-cryptography.html" onclick="pageScrollToTop(this)">
                                     Cryptography
                                 </a>
                                 
+                                    
+                                        <ul><li><a href="#symmetric-encryption" onclick="mobilePageScrollToAnchor(this)" >Symmetric Encryption</a></li><li><a href="#one-time-pad" onclick="mobilePageScrollToAnchor(this)" >One Time Pad</a></li></ul>
+
                                     
                                 
                             </li>
@@ -140,7 +143,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Notebook</a>
+                            <a href="." >Cryptography</a>
                         
                     </h1>
                 </div>
@@ -153,29 +156,26 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="">Notebook</h1>
+                        <h1 id="/jekyll/cryptography">Cryptography</h1>
                     
 
-                    <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+                    <h2 id="symmetric-encryption">Symmetric Encryption</h2>
 
-<div class="container">
-  <h1>404</h1>
+<p>The primary building block of secure communication is symmetric encryption. Symmetric encryption is described with a pair of ciphers $E$ and $D$ a secret key $k$. In other words, given a key space $\mathcal{K}$, a message space $\mathcal{M}$, and a cipher space $\mathcal{C}$, a cipher is a pair of “efficient” algorithms $E:\mathcal{K}\times \mathcal{M}\to \mathcal{C}$ and $D:\mathcal{K}\times\mathcal{C}\to\mathcal{M}$ so that</p>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+\[D(k,E(k,m))=m\]
+
+<p>for all $k\in \mathcal{K}$ and $m\in \mathcal{M}$.</p>
+
+<h2 id="one-time-pad">One Time Pad</h2>
+
+<p>One time pad is a symmetric encryption scheme in which the key is as long as the plaintext. Both the key and the plaintext are represented by strings of bits, and the encryption and decryption algorithms simply take the XOR of both their arguments. In other words,</p>
+
+\[E(k,m)=k\oplus m, D(c,m)=c\oplus m.\]
+
+<p>This does indeed satisfy the condition of consistency as $D(k,E(k,m))=k\oplus k\oplus m=0\oplus m=m$.</p>
+
+<p>One time pad is a useful concept as it is secure and has fast encryption and decryption algorithms, but it is impractical as the key needs to be as long as the key plaintext.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -208,6 +208,38 @@ window.MathJax = {
 
 <!-- introduce per-page mermaid support -->
 
+    <script>
+    function render_mermaid() {
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: "default",
+        });
+        window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+    }
+
+    function initialize_mermaid() {
+        if (document.readyState === "loading") {
+            // Loading hasn't finished yet
+            document.addEventListener("DOMContentLoaded", render_mermaid);
+        } else {
+            // `DOMContentLoaded` has already fired
+            render_mermaid();
+        }
+    }
+
+    if (window.mermaid_script && window.mermaid) {
+        initialize_mermaid();
+    } else {
+        window.mermaid_script = document.createElement("script");
+        mermaid_script.onload = initialize_mermaid;
+        document.head.appendChild(mermaid_script);
+        mermaid_script.defer = true;
+        mermaid_script.id = 'mermaid-script';
+        mermaid_script.src = 'https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js';
+    }
+</script>
+
+
 
 <!-- introduce mathjax support -->
 <script>
@@ -231,14 +263,12 @@ window.MathJax = {
     }
 </script>
 
-<a href="/" class="navigation navigation-pre navigation-unique">
-                        <i class="fa"></i>
-                    </a>
 
-                    
-                        <a href="" class="navigation navigation-next navigation-unique" aria-label="Next page: ">
-                            <i class="fa fa-angle-right"></i>
+                        <a href="/jekyll/2024-07-12-quantum_computing.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Quantum Computing">
+                            <i class="fa fa-angle-left"></i>
                         </a>
+                    
+
                     
                 </div>
             </div>
@@ -251,17 +281,6 @@ window.MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-
-        
-        "next": {
-            "title": "Quantum Computing",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2024-07-12-quantum_computing.md",
-            "ref": "_posts/2024-07-12-quantum_computing.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -351,8 +370,8 @@ window.MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "404.html",
-        "mtime": "",
+        "path": "_posts/2024-07-23-cryptography.md",
+        "mtime": "2024-07-12 00:00:00 -0700",
         "type": "markdown"
     },
     "gitbook": {
