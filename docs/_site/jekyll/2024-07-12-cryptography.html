@@ -176,6 +176,28 @@
 <p>This does indeed satisfy the condition of consistency as $D(k,E(k,m))=k\oplus k\oplus m=0\oplus m=m$.</p>
 
 <p>One time pad is a useful concept as it is secure and has fast encryption and decryption algorithms, but it is impractical as the key needs to be as long as the key plaintext.</p>
+
+<p>To demonstrate the security of OTP, it is necessary to first define what theoretic security is. We say that a cipher $(E,D)$ over $(\mathcal{K},\mathcal{M}, \mathcal{C})$ has perfect secrecy if $\forall m_0,m_1\in \mathcal{M}$ with $len(m_0)=len(m_1)$, $\forall c\in \mathcal{C}$,</p>
+
+\[P(E(k,m_0)=c) = P(E(k,m_1)=c)\]
+
+<p>where $k$ is uniform on $\mathcal{K}$. In other words, the cipher text does not provide any information about the plain text, as any plain text has an equal probability of being correct, if the key is chosen uniformly at random. Essentially, this means that the encryption scheme is invulnerable to cipher text attacks.</p>
+
+<p>We can now prove that OTP indeed has perfect secrecy. We first need a lemma:</p>
+
+<p><strong>Lemma 1.1</strong> If $A,B$ are distributed at random on $(0,1)^n$ with $B$ distributed uniformly, then $A\oplus B$ is also distributed uniformly.<br />
+<em>Proof:</em> We use the law of total probability and the fact that $f(b)=b\oplus c$ is bijective on $(0,1)^n$:</p>
+
+\[\begin{align*}
+P(A\oplus B = c) &amp;= \sum_{b\in (0,1)^n}P(A\oplus B=c | B=b)P(B=b)\\
+&amp;= \frac{1}{2^n}\sum_{b\in (0,1)^n}P(A\oplus b = c)\\
+&amp;= \frac{1}{2^n}\sum_{b\in(0,1)^n}P(A=b\oplus c)\\
+&amp;= \frac{1}{2^n}\sum_{a\in (0,1)^n}P(A=a)\\
+&amp;= \frac{1}{2^n}.
+\end{align*}\]
+
+<p><strong>Theorem 1.2</strong> OTP has perfect secrecy.<br />
+<em>Proof:</em></p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -376,7 +398,7 @@ window.MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-25 10:55:55 -0700"
+        "time": "2024-07-25 18:29:48 -0700"
     },
     "basePath": "",
     "book": {

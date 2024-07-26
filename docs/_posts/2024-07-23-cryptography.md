@@ -24,3 +24,27 @@ $$E(k,m)=k\oplus m, D(c,m)=c\oplus m.$$
 This does indeed satisfy the condition of consistency as $D(k,E(k,m))=k\oplus k\oplus m=0\oplus m=m$.
 
 One time pad is a useful concept as it is secure and has fast encryption and decryption algorithms, but it is impractical as the key needs to be as long as the key plaintext. 
+
+To demonstrate the security of OTP, it is necessary to first define what theoretic security is. We say that a cipher $(E,D)$ over $(\mathcal{K},\mathcal{M}, \mathcal{C})$ has perfect secrecy if $\forall m_0,m_1\in \mathcal{M}$ with $len(m_0)=len(m_1)$, $\forall c\in \mathcal{C}$, 
+
+$$P(E(k,m_0)=c) = P(E(k,m_1)=c)$$
+
+where $k$ is uniform on $\mathcal{K}$. In other words, the cipher text does not provide any information about the plain text, as any plain text has an equal probability of being correct, if the key is chosen uniformly at random. Essentially, this means that the encryption scheme is invulnerable to cipher text attacks. 
+
+We can now prove that OTP indeed has perfect secrecy. We first need a lemma:
+
+**Lemma 1.1** If $A,B$ are distributed at random on $(0,1)^n$ with $B$ distributed uniformly, then $A\oplus B$ is also distributed uniformly.  
+*Proof:* We use the law of total probability and the fact that $f(b)=b\oplus c$ is bijective on $(0,1)^n$: 
+
+$$
+\begin{align*}
+P(A\oplus B = c) &= \sum_{b\in (0,1)^n}P(A\oplus B=c | B=b)P(B=b)\\
+&= \frac{1}{2^n}\sum_{b\in (0,1)^n}P(A\oplus b = c)\\
+&= \frac{1}{2^n}\sum_{b\in(0,1)^n}P(A=b\oplus c)\\
+&= \frac{1}{2^n}\sum_{a\in (0,1)^n}P(A=a)\\
+&= \frac{1}{2^n}.
+\end{align*}
+$$
+
+**Theorem 1.2** OTP has perfect secrecy.  
+*Proof:* 
