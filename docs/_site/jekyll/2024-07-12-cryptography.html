@@ -101,7 +101,7 @@
                                 </a>
                                 
                                     
-                                        <ul><li><a href="#symmetric-encryption" onclick="mobilePageScrollToAnchor(this)" >Symmetric Encryption</a></li><li><a href="#one-time-pad" onclick="mobilePageScrollToAnchor(this)" >One Time Pad</a></li></ul>
+                                        <ul><li><a href="#symmetric-encryption" onclick="mobilePageScrollToAnchor(this)" >Symmetric Encryption</a></li><li><a href="#one-time-pad" onclick="mobilePageScrollToAnchor(this)" >One Time Pad</a><ul><li><a href="#pseudorandom-generators" onclick="mobilePageScrollToAnchor(this)" >Pseudorandom Generators</a></li></ul></li></ul>
 
                                     
                                 
@@ -197,7 +197,17 @@ P(A\oplus B = c) &amp;= \sum_{b\in (0,1)^n}P(A\oplus B=c | B=b)P(B=b)\\
 \end{align*}\]
 
 <p><strong>Theorem 1.2</strong> OTP has perfect secrecy.<br />
-<em>Proof:</em></p>
+<em>Proof:</em> We have that $\mathcal{M}=\mathcal{C}=\mathcal{K}=(0,1)^n$. Let $m_0,m_1\in \mathcal{M}$ and $c\in \mathcal{C}$ be given and let $k\leftarrow \mathcal{K}$ be chosen uniformly at random. Then, from the lemma $E(k,m_0)=k\oplus m_0$ and $E(k,m_1)=k\oplus m_1$ are uniform on $\mathcal{C}$, hence</p>
+
+\[P(E(k,m_0)=c)=P(E(k,m_1)).\]
+
+<p>So, OTP is prefectly secure.</p>
+
+<h3 id="pseudorandom-generators">Pseudorandom Generators</h3>
+
+<p>The issue with OTP is that keys need to be as long as the plaintext, hence encrypting messages is costly. Moreover, if there is a mechanism by which two parties can exchange keys securely, they could just use it to send messages instead. One might try to reuse a key $k$ to send two encrypted messages $m_0$ and $m_1$, which is called two time pad. This is insecure, however, as if an attacked XORs the cipher texts, they get $m_0\oplus m_1$. Then, if an attacker knows anything at all about the content of the plaintext, being english sentences for instance, then they can recover the plaintexts $m_0$ and $m_1$. Therefore, keys should never be used more than once.</p>
+
+<p>To solve</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -398,7 +408,7 @@ window.MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-25 18:29:48 -0700"
+        "time": "2024-07-29 18:33:37 -0700"
     },
     "basePath": "",
     "book": {

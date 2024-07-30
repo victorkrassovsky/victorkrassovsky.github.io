@@ -47,4 +47,14 @@ P(A\oplus B = c) &= \sum_{b\in (0,1)^n}P(A\oplus B=c | B=b)P(B=b)\\
 $$
 
 **Theorem 1.2** OTP has perfect secrecy.  
-*Proof:* 
+*Proof:* We have that $\mathcal{M}=\mathcal{C}=\mathcal{K}=(0,1)^n$. Let $m_0,m_1\in \mathcal{M}$ and $c\in \mathcal{C}$ be given and let $k\leftarrow \mathcal{K}$ be chosen uniformly at random. Then, from the lemma $E(k,m_0)=k\oplus m_0$ and $E(k,m_1)=k\oplus m_1$ are uniform on $\mathcal{C}$, hence
+
+$$P(E(k,m_0)=c)=P(E(k,m_1)).$$
+
+So, OTP is prefectly secure.
+
+### Pseudorandom Generators
+
+The issue with OTP is that keys need to be as long as the plaintext, hence encrypting messages is costly. Moreover, if there is a mechanism by which two parties can exchange keys securely, they could just use it to send messages instead. One might try to reuse a key $k$ to send two encrypted messages $m_0$ and $m_1$, which is called two time pad. This is insecure, however, as if an attacked XORs the cipher texts, they get $m_0\oplus m_1$. Then, if an attacker knows anything at all about the content of the plaintext, being english sentences for instance, then they can recover the plaintexts $m_0$ and $m_1$. Therefore, keys should never be used more than once.
+
+To solve 
