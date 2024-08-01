@@ -65,7 +65,7 @@ We say that a PRG $G$ is secure if for all efficient statistical tests $A$,
 
 $$|P(A(r)=1) - P(A(G(k))=1)| \le \epsilon$$ 
 
-where $r$ is uniform on $(0,1)^n$, $k$ is uniform on $K$, and $\epsilon$ is negligible.
+where $r$ is uniform on $(0,1)^n$, $k$ is uniform on $K$, and $\epsilon$ is negligible. The difference in probabilities is called the advantage of $A$ on $G$. 
 
 The requirement that $A$ is efficient is important, as there are in fact no PRGs that are indistinguishable when subjected to an arbitrary statistical test. To see this, just let $A(x)$ be a test that is 1 when $x$ is in the image of the given PRG $G$. Then $P(A(G(k)))=1$, while $P(A(r))=\frac{\|K\|}{2^n}$, hence their difference should be non-negligible for any $\|K\| < 2^n$. 
 
