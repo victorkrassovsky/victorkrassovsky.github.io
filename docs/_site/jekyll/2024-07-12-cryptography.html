@@ -215,7 +215,7 @@ P(A\oplus B = c) &amp;= \sum_{b\in (0,1)^n}P(A\oplus B=c | B=b)P(B=b)\\
 
 \[|P(A(r)=1) - P(A(G(k))=1)| \le \epsilon\]
 
-<p>where $r$ is uniform on $(0,1)^n$, $k$ is uniform on $K$, and $\epsilon$ is negligible.</p>
+<p>where $r$ is uniform on $(0,1)^n$, $k$ is uniform on $K$, and $\epsilon$ is negligible. The difference in probabilities is called the advantage of $A$ on $G$.</p>
 
 <p>The requirement that $A$ is efficient is important, as there are in fact no PRGs that are indistinguishable when subjected to an arbitrary statistical test. To see this, just let $A(x)$ be a test that is 1 when $x$ is in the image of the given PRG $G$. Then $P(A(G(k)))=1$, while $P(A(r))=\frac{|K|}{2^n}$, hence their difference should be non-negligible for any $|K| &lt; 2^n$.</p>
 
@@ -419,7 +419,7 @@ window.MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-31 18:51:27 -0700"
+        "time": "2024-07-31 23:09:42 -0700"
     },
     "basePath": "",
     "book": {
