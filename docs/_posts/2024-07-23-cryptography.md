@@ -53,8 +53,19 @@ $$P(E(k,m_0)=c)=P(E(k,m_1)).$$
 
 So, OTP is prefectly secure.
 
-### Pseudorandom Generators
+## Stream Ciphers
+
+### Psuedorandom Generators
 
 The issue with OTP is that keys need to be as long as the plaintext, hence encrypting messages is costly. Moreover, if there is a mechanism by which two parties can exchange keys securely, they could just use it to send messages instead. One might try to reuse a key $k$ to send two encrypted messages $m_0$ and $m_1$, which is called two time pad. This is insecure, however, as if an attacked XORs the cipher texts, they get $m_0\oplus m_1$. Then, if an attacker knows anything at all about the content of the plaintext, being english sentences for instance, then they can recover the plaintexts $m_0$ and $m_1$. Therefore, keys should never be used more than once.
 
-To solve 
+To solve this issue, we use devices called psuedorandom generators which effectively generate longer keys from shorter ones in such a way that an attacker cannot distinguish between the generated keys and keys sampled at random. In symbols, a pseudorandom generator is a function $G:K \to (0,1)^n$ so that $G(k)$ is indistinguishable from a random string $r\in (0,1)^n$. To define distinguishability we use statistical tests which are algorithms on $(0,1)^n$ that output 0 or 1. An example of a statistical test could be $A(x)= \text{LSB}(x)$. 
+
+We say that a PRG $G$ is secure if for all efficient statistical tests $A$, 
+
+$$|P(A(r)=1) - P(A(G(k))=1)| \le \epsilon$$ 
+
+where $r$ is uniform on $(0,1)^n$, $k$ is uniform on $K$, and $\epsilon$ is negligible.
+
+The requirement that $A$ is efficient is important, as there are in fact no PRGs that are indistinguishable when subjected to an arbitrary statistical test. To see this, just let $A(x)$ be a test that is 1 when $x$ is in the image of the given PRG $G$. Then $P(A(G(k)))=1$, while $P(A(r))=\frac{\|K\|}{2^n}$, hence their difference should be non-negligible for any $\|K\| < 2^n$. 
+

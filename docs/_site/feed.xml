@@ -1,5 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-29T18:33:37-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
-</subtitle><author><name>Victor Krassovsky</name></author><entry><title type="html">Quantum Computing</title><link href="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html" rel="alternate" type="text/html" title="Quantum Computing" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/quantum_computing</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html"><![CDATA[<h2 id="quantum-systems">Quantum Systems</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-07-31T18:51:27-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Notebook</title><subtitle>Notesheets on various topics
+</subtitle><author><name>Victor Krassovsky</name></author><entry><title type="html">Cryptography</title><link href="http://localhost:4000/jekyll/2024-07-12-cryptography.html" rel="alternate" type="text/html" title="Cryptography" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/cryptography</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-cryptography.html"><![CDATA[<h2 id="symmetric-encryption">Symmetric Encryption</h2>
+
+<p>The primary building block of secure communication is symmetric encryption. Symmetric encryption is described with a pair of ciphers $E$ and $D$ a secret key $k$. In other words, given a key space $\mathcal{K}$, a message space $\mathcal{M}$, and a cipher space $\mathcal{C}$, a cipher is a pair of “efficient” algorithms $E:\mathcal{K}\times \mathcal{M}\to \mathcal{C}$ and $D:\mathcal{K}\times\mathcal{C}\to\mathcal{M}$ so that</p>
+
+\[D(k,E(k,m))=m\]
+
+<p>for all $k\in \mathcal{K}$ and $m\in \mathcal{M}$.</p>
+
+<h2 id="one-time-pad">One Time Pad</h2>
+
+<p>One time pad is a symmetric encryption scheme in which the key is as long as the plaintext. Both the key and the plaintext are represented by strings of bits, and the encryption and decryption algorithms simply take the XOR of both their arguments. In other words,</p>
+
+\[E(k,m)=k\oplus m, D(c,m)=c\oplus m.\]
+
+<p>This does indeed satisfy the condition of consistency as $D(k,E(k,m))=k\oplus k\oplus m=0\oplus m=m$.</p>
+
+<p>One time pad is a useful concept as it is secure and has fast encryption and decryption algorithms, but it is impractical as the key needs to be as long as the key plaintext.</p>
+
+<p>To demonstrate the security of OTP, it is necessary to first define what theoretic security is. We say that a cipher $(E,D)$ over $(\mathcal{K},\mathcal{M}, \mathcal{C})$ has perfect secrecy if $\forall m_0,m_1\in \mathcal{M}$ with $len(m_0)=len(m_1)$, $\forall c\in \mathcal{C}$,</p>
+
+\[P(E(k,m_0)=c) = P(E(k,m_1)=c)\]
+
+<p>where $k$ is uniform on $\mathcal{K}$. In other words, the cipher text does not provide any information about the plain text, as any plain text has an equal probability of being correct, if the key is chosen uniformly at random. Essentially, this means that the encryption scheme is invulnerable to cipher text attacks.</p>
+
+<p>We can now prove that OTP indeed has perfect secrecy. We first need a lemma:</p>
+
+<p><strong>Lemma 1.1</strong> If $A,B$ are distributed at random on $(0,1)^n$ with $B$ distributed uniformly, then $A\oplus B$ is also distributed uniformly.<br />
+<em>Proof:</em> We use the law of total probability and the fact that $f(b)=b\oplus c$ is bijective on $(0,1)^n$:</p>
+
+\[\begin{align*}
+P(A\oplus B = c) &amp;= \sum_{b\in (0,1)^n}P(A\oplus B=c | B=b)P(B=b)\\
+&amp;= \frac{1}{2^n}\sum_{b\in (0,1)^n}P(A\oplus b = c)\\
+&amp;= \frac{1}{2^n}\sum_{b\in(0,1)^n}P(A=b\oplus c)\\
+&amp;= \frac{1}{2^n}\sum_{a\in (0,1)^n}P(A=a)\\
+&amp;= \frac{1}{2^n}.
+\end{align*}\]
+
+<p><strong>Theorem 1.2</strong> OTP has perfect secrecy.<br />
+<em>Proof:</em> We have that $\mathcal{M}=\mathcal{C}=\mathcal{K}=(0,1)^n$. Let $m_0,m_1\in \mathcal{M}$ and $c\in \mathcal{C}$ be given and let $k\leftarrow \mathcal{K}$ be chosen uniformly at random. Then, from the lemma $E(k,m_0)=k\oplus m_0$ and $E(k,m_1)=k\oplus m_1$ are uniform on $\mathcal{C}$, hence</p>
+
+\[P(E(k,m_0)=c)=P(E(k,m_1)).\]
+
+<p>So, OTP is prefectly secure.</p>
+
+<h2 id="stream-ciphers">Stream Ciphers</h2>
+
+<h3 id="psuedorandom-generators">Psuedorandom Generators</h3>
+
+<p>The issue with OTP is that keys need to be as long as the plaintext, hence encrypting messages is costly. Moreover, if there is a mechanism by which two parties can exchange keys securely, they could just use it to send messages instead. One might try to reuse a key $k$ to send two encrypted messages $m_0$ and $m_1$, which is called two time pad. This is insecure, however, as if an attacked XORs the cipher texts, they get $m_0\oplus m_1$. Then, if an attacker knows anything at all about the content of the plaintext, being english sentences for instance, then they can recover the plaintexts $m_0$ and $m_1$. Therefore, keys should never be used more than once.</p>
+
+<p>To solve this issue, we use devices called psuedorandom generators which effectively generate longer keys from shorter ones in such a way that an attacker cannot distinguish between the generated keys and keys sampled at random. In symbols, a pseudorandom generator is a function $G:K \to (0,1)^n$ so that $G(k)$ is indistinguishable from a random string $r\in (0,1)^n$. To define distinguishability we use statistical tests which are algorithms on $(0,1)^n$ that output 0 or 1. An example of a statistical test could be $A(x)= \text{LSB}(x)$.</p>
+
+<p>We say that a PRG $G$ is secure if for all efficient statistical tests $A$,</p>
+
+\[|P(A(r)=1) - P(A(G(k))=1)| \le \epsilon\]
+
+<p>where $r$ is uniform on $(0,1)^n$, $k$ is uniform on $K$, and $\epsilon$ is negligible.</p>
+
+<p>The requirement that $A$ is efficient is important, as there are in fact no PRGs that are indistinguishable when subjected to an arbitrary statistical test. To see this, just let $A(x)$ be a test that is 1 when $x$ is in the image of the given PRG $G$. Then $P(A(G(k)))=1$, while $P(A(r))=\frac{|K|}{2^n}$, hence their difference should be non-negligible for any $|K| &lt; 2^n$.</p>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Symmetric Encryption]]></summary></entry><entry><title type="html">Quantum Computing</title><link href="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html" rel="alternate" type="text/html" title="Quantum Computing" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/quantum_computing</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-quantum_computing.html"><![CDATA[<h2 id="quantum-systems">Quantum Systems</h2>
 <p>Quantum information systems are built up of four components:</p>
 <ol>
   <li>States</li>
@@ -93,52 +151,4 @@ p_i &amp;= q_0 \text{tr}(M_i |\psi_0\rangle \langle\psi_0 |)+q_1\text{tr}(M_i |\
 
 \[\rho = \sum_i q_i |\psi_i\rangle \langle \psi_i |.\]
 
-<h3 id="bloch-sphere">Bloch Sphere</h3>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: States Dynamics Measurements Observables]]></summary></entry><entry><title type="html">Cryptography</title><link href="http://localhost:4000/jekyll/2024-07-12-cryptography.html" rel="alternate" type="text/html" title="Cryptography" /><published>2024-07-12T00:00:00-07:00</published><updated>2024-07-12T00:00:00-07:00</updated><id>http://localhost:4000/jekyll/cryptography</id><content type="html" xml:base="http://localhost:4000/jekyll/2024-07-12-cryptography.html"><![CDATA[<h2 id="symmetric-encryption">Symmetric Encryption</h2>
-
-<p>The primary building block of secure communication is symmetric encryption. Symmetric encryption is described with a pair of ciphers $E$ and $D$ a secret key $k$. In other words, given a key space $\mathcal{K}$, a message space $\mathcal{M}$, and a cipher space $\mathcal{C}$, a cipher is a pair of “efficient” algorithms $E:\mathcal{K}\times \mathcal{M}\to \mathcal{C}$ and $D:\mathcal{K}\times\mathcal{C}\to\mathcal{M}$ so that</p>
-
-\[D(k,E(k,m))=m\]
-
-<p>for all $k\in \mathcal{K}$ and $m\in \mathcal{M}$.</p>
-
-<h2 id="one-time-pad">One Time Pad</h2>
-
-<p>One time pad is a symmetric encryption scheme in which the key is as long as the plaintext. Both the key and the plaintext are represented by strings of bits, and the encryption and decryption algorithms simply take the XOR of both their arguments. In other words,</p>
-
-\[E(k,m)=k\oplus m, D(c,m)=c\oplus m.\]
-
-<p>This does indeed satisfy the condition of consistency as $D(k,E(k,m))=k\oplus k\oplus m=0\oplus m=m$.</p>
-
-<p>One time pad is a useful concept as it is secure and has fast encryption and decryption algorithms, but it is impractical as the key needs to be as long as the key plaintext.</p>
-
-<p>To demonstrate the security of OTP, it is necessary to first define what theoretic security is. We say that a cipher $(E,D)$ over $(\mathcal{K},\mathcal{M}, \mathcal{C})$ has perfect secrecy if $\forall m_0,m_1\in \mathcal{M}$ with $len(m_0)=len(m_1)$, $\forall c\in \mathcal{C}$,</p>
-
-\[P(E(k,m_0)=c) = P(E(k,m_1)=c)\]
-
-<p>where $k$ is uniform on $\mathcal{K}$. In other words, the cipher text does not provide any information about the plain text, as any plain text has an equal probability of being correct, if the key is chosen uniformly at random. Essentially, this means that the encryption scheme is invulnerable to cipher text attacks.</p>
-
-<p>We can now prove that OTP indeed has perfect secrecy. We first need a lemma:</p>
-
-<p><strong>Lemma 1.1</strong> If $A,B$ are distributed at random on $(0,1)^n$ with $B$ distributed uniformly, then $A\oplus B$ is also distributed uniformly.<br />
-<em>Proof:</em> We use the law of total probability and the fact that $f(b)=b\oplus c$ is bijective on $(0,1)^n$:</p>
-
-\[\begin{align*}
-P(A\oplus B = c) &amp;= \sum_{b\in (0,1)^n}P(A\oplus B=c | B=b)P(B=b)\\
-&amp;= \frac{1}{2^n}\sum_{b\in (0,1)^n}P(A\oplus b = c)\\
-&amp;= \frac{1}{2^n}\sum_{b\in(0,1)^n}P(A=b\oplus c)\\
-&amp;= \frac{1}{2^n}\sum_{a\in (0,1)^n}P(A=a)\\
-&amp;= \frac{1}{2^n}.
-\end{align*}\]
-
-<p><strong>Theorem 1.2</strong> OTP has perfect secrecy.<br />
-<em>Proof:</em> We have that $\mathcal{M}=\mathcal{C}=\mathcal{K}=(0,1)^n$. Let $m_0,m_1\in \mathcal{M}$ and $c\in \mathcal{C}$ be given and let $k\leftarrow \mathcal{K}$ be chosen uniformly at random. Then, from the lemma $E(k,m_0)=k\oplus m_0$ and $E(k,m_1)=k\oplus m_1$ are uniform on $\mathcal{C}$, hence</p>
-
-\[P(E(k,m_0)=c)=P(E(k,m_1)).\]
-
-<p>So, OTP is prefectly secure.</p>
-
-<h3 id="pseudorandom-generators">Pseudorandom Generators</h3>
-
-<p>The issue with OTP is that keys need to be as long as the plaintext, hence encrypting messages is costly. Moreover, if there is a mechanism by which two parties can exchange keys securely, they could just use it to send messages instead. One might try to reuse a key $k$ to send two encrypted messages $m_0$ and $m_1$, which is called two time pad. This is insecure, however, as if an attacked XORs the cipher texts, they get $m_0\oplus m_1$. Then, if an attacker knows anything at all about the content of the plaintext, being english sentences for instance, then they can recover the plaintexts $m_0$ and $m_1$. Therefore, keys should never be used more than once.</p>
-
-<p>To solve</p>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Symmetric Encryption]]></summary></entry></feed>
+<h3 id="bloch-sphere">Bloch Sphere</h3>]]></content><author><name>Victor Krassovsky</name></author><category term="Jekyll" /><summary type="html"><![CDATA[Quantum Systems Quantum information systems are built up of four components: States Dynamics Measurements Observables]]></summary></entry></feed>
