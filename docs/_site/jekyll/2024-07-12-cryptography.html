@@ -101,7 +101,7 @@
                                 </a>
                                 
                                     
-                                        <ul><li><a href="#symmetric-encryption" onclick="mobilePageScrollToAnchor(this)" >Symmetric Encryption</a></li><li><a href="#one-time-pad" onclick="mobilePageScrollToAnchor(this)" >One Time Pad</a></li><li><a href="#stream-ciphers" onclick="mobilePageScrollToAnchor(this)" >Stream Ciphers</a><ul><li><a href="#psuedorandom-generators" onclick="mobilePageScrollToAnchor(this)" >Psuedorandom Generators</a></li></ul></li></ul>
+                                        <ul><li><a href="#symmetric-encryption" onclick="mobilePageScrollToAnchor(this)" >Symmetric Encryption</a></li><li><a href="#one-time-pad" onclick="mobilePageScrollToAnchor(this)" >One Time Pad</a></li><li><a href="#stream-ciphers" onclick="mobilePageScrollToAnchor(this)" >Stream Ciphers</a><ul><li><a href="#psuedorandom-generators" onclick="mobilePageScrollToAnchor(this)" >Psuedorandom Generators</a></li><li><a href="#semantic-security" onclick="mobilePageScrollToAnchor(this)" >Semantic Security</a></li></ul></li></ul>
 
                                     
                                 
@@ -219,6 +219,9 @@ P(A\oplus B = c) &amp;= \sum_{b\in (0,1)^n}P(A\oplus B=c | B=b)P(B=b)\\
 
 <p>The requirement that $A$ is efficient is important, as there are in fact no PRGs that are indistinguishable when subjected to an arbitrary statistical test. To see this, just let $A(x)$ be a test that is 1 when $x$ is in the image of the given PRG $G$. Then $P(A(G(k)))=1$, while $P(A(r))=\frac{|K|}{2^n}$, hence their difference should be non-negligible for any $|K| &lt; 2^n$.</p>
 
+<h3 id="semantic-security">Semantic Security</h3>
+
+<p>Ciphers that use PRGs to generate their keys are called stream ciphers. Due to the restriction on the length of keys, it is not possible for stream ciphers to be perfectly secure. Instead, they settle for semantic security which captures the idea of the negligible distinguishability between PRGs and truely randomly sampled keys.</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -419,7 +422,7 @@ window.MathJax = {
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-07-31 23:09:42 -0700"
+        "time": "2024-08-01 13:12:59 -0700"
     },
     "basePath": "",
     "book": {
