@@ -9,8 +9,8 @@ description: >
 version:          1.0
 gitbook_version:  3.2.3
 
-url:              'https://victorkrassovsky.github.io/notebook/'
-baseurl:          '/notebook/'
+url:              'https://victorkrassovsky.github.io'
+baseurl:          ''
 rss:              RSS
 
 # bootstrap: use the remote theme for the site itself
