@@ -63,7 +63,7 @@ To solve this issue, we use devices called psuedorandom generators which effecti
 
 We say that a PRG $G$ is secure if for all efficient statistical tests $A$, 
 
-$$|P(A(r)=1) - P(A(G(k))=1)| \le \epsilon$$ 
+$$\text{Adv}_{\text{PRG}}[A,G]=|P(A(r)=1) - P(A(G(k))=1)| \le \epsilon$$ 
 
 where $r$ is uniform on $(0,1)^n$, $k$ is uniform on $K$, and $\epsilon$ is negligible. The difference in probabilities is called the advantage of $A$ on $G$. 
 
@@ -71,4 +71,34 @@ The requirement that $A$ is efficient is important, as there are in fact no PRGs
 
 ### Semantic Security
 
-Ciphers that use PRGs to generate their keys are called stream ciphers. Due to the restriction on the length of keys, it is not possible for stream ciphers to be perfectly secure. Instead, they settle for semantic security which captures the idea of the negligible distinguishability between PRGs and truely randomly sampled keys. 
+Ciphers that use PRGs to generate their keys are called stream ciphers. Due to the restriction on the length of keys, it is not possible for stream ciphers to be perfectly secure. Instead, they settle for semantic security which captures the idea of the negligible distinguishability between PRGs and truely randomly sampled keys.
+
+In the definition of semantic security, we have a challenger, who encrypts messages, and an adversary $A$ who is attempting to break the challengers ciphers. First the challenger takes two explicit messages $m_0,m_1$ and samples a key $k$ at random from the key set. Then, they encrypt one of the two messages $m_b$ with the key $k$ and send it to the adversary whose goal is to determine the value of $b$, or the message that was sent. Then, if $W_b$ is the event that the challenger chose message $b$, then $A$'s advantage over the cipher $E$ is 
+
+$$\text{Adv}_{\text{SS}}[A,E] = |P(W_0)-P(W_1)|.$$
+
+If this quantity is negligible for all efficient $A$, then $E$ is said to be semantically secure.It is not difficult to show that OTP is semantically secure, and in fact that perfect secrecy implies semantic secrecy.
+
+All that's left is to show that a stream cipher that uses a secure PRG is semantically secure.
+
+**Theorem 2.1:** Let $G$ be a secure PRG. Then the cipher defined by $E(k,m)=G(k)\oplus m$ and $D(k,m)=G(k)\oplus m$ is semantically secure.	
+*Proof:* We will show that for all efficient adversarys $A$, there is an efficient statistical test $B$ so that
+
+$$\text{Adv}_{\text{SS}}[A,E] \le 2\cdot \text{Adv}_{\text{PRG}}[B,G].$$
+
+First, let $A$ be an adversary and define events $W_0$ and $W_1$ as in the definition of semantic security. Furthermore, play out the same situation except instead of using a stream cipher, use one time pad, and call the two resulting events $R_0$ and $R_1$. In other words, keep everything the same except replace $G(k)$ with an actually random $r$. Then, $\|P(R_0)-P(R_1)\| = 0$ since OTP is perfectly secure and $\text{Adv}[A,E]=\|P(W_0)-P(W_1)\|$.
+
+Moreover, there is a statistical test $B$ so that $\|P(W_b)-P(R_b)\|=\text{Adv}_{PRG}[B,G]$, for $b\in\{0,1\}$, as this difference in probabilities describes the distinguishibility between $G$ and a truely random generator. Therefore, using the triangle inequality,
+
+$$
+\begin{align*}
+  \text{Adv}_{\text{SS}}[A,E] &= |P(W_0)-P(W_1)|\\
+  &= |P(W_0)-P(R_0)| + |P(W_1)-P(R_1)| + |P(R_0)-P(R_1)|\\
+  &= 2\cdot\text{Adv}_{\text{PRG}}[B,G]
+\end{align*}
+$$
+
+Since $G$ is secure, the advantage of $B$ over $G$ must be negligible, hence the advantage of $A$ over $E$ is also negligible. So, we have won.
+
+## Block Ciphers
+
