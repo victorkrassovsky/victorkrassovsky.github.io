@@ -1,7 +1,9 @@
 ---
-layout: home
+layout: default
 title: About
 permalink: /about/
 ---
 
-Various things
+$\sum X_i$
+
+[jekyll-organization]: https://github.com/jekyll

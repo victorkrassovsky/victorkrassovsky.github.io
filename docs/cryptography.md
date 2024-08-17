@@ -1,10 +1,9 @@
 ---
 title: Cryptography
 author: Victor Krassovsky
-date: 2024-07-12
-category: Jekyll
-layout: post
+layout: default
 mermaid: true
+permalink: /cryptography/
 ---
 
 ## Symmetric Encryption
@@ -81,8 +80,8 @@ If this quantity is negligible for all efficient $A$, then $E$ is said to be sem
 
 All that's left is to show that a stream cipher that uses a secure PRG is semantically secure.
 
-**Theorem 2.1:** Let $G$ be a secure PRG. Then the cipher defined by $E(k,m)=G(k)\oplus m$ and $D(k,m)=G(k)\oplus m$ is semantically secure.	
-*Proof:* We will show that for all efficient adversarys $A$, there is an efficient statistical test $B$ so that
+**Theorem 2.1:** Let $G$ be a secure PRG. Then the cipher defined by $E(k,m)=G(k)\oplus m$ and $D(k,m)=G(k)\oplus m$ is semantically secure.  
+*Proof:* We will show that for all efficient adversaries $A$, there is an efficient statistical test $B$ so that
 
 $$\text{Adv}_{\text{SS}}[A,E] \le 2\cdot \text{Adv}_{\text{PRG}}[B,G].$$
 
@@ -93,7 +92,7 @@ Moreover, there is a statistical test $B$ so that $\|P(W_b)-P(R_b)\|=\text{Adv}_
 $$
 \begin{align*}
   \text{Adv}_{\text{SS}}[A,E] &= |P(W_0)-P(W_1)|\\
-  &= |P(W_0)-P(R_0)| + |P(W_1)-P(R_1)| + |P(R_0)-P(R_1)|\\
+  &\le |P(W_0)-P(R_0)| + |P(W_1)-P(R_1)| + |P(R_0)-P(R_1)|\\
   &= 2\cdot\text{Adv}_{\text{PRG}}[B,G]
 \end{align*}
 $$
@@ -102,3 +101,4 @@ Since $G$ is secure, the advantage of $B$ over $G$ must be negligible, hence the
 
 ## Block Ciphers
 
+Block ciphers are ciphers which map between plaintexts and ciphertexts of fixed lengths. 

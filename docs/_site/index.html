@@ -1,375 +1,81 @@
-<!DOCTYPE HTML>
-<html lang="en" >
-    <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>About · Notebook</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="description" content="Notesheets on various topics
-"><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Victor Krassovsky"><link rel="stylesheet" href="/assets/gitbook/style.css">
-<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
-<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
-<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-fontsettings/website.css">
-<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-search-pro/search.css">
-<link rel="stylesheet" href="/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
 
-<link rel="stylesheet" href="/assets/gitbook/rouge/colorful.css">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Victor Krassovsky | Various things</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Victor Krassovsky" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Various things" />
+<meta property="og:description" content="Various things" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Victor Krassovsky" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Victor Krassovsky" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Various things","headline":"Victor Krassovsky","name":"Victor Krassovsky","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
 
-<link rel="stylesheet" href="/assets/gitbook/custom.css">
-<link rel="stylesheet" href="/assets/gitbook/custom-local.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
-<meta name="HandheldFriendly" content="true"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
-<link rel="shortcut icon" href="//assets/gitbook/images/favicon.ico" type="image/x-icon">
-
-
-
-
-
-        
-            <link rel="next" href="/jekyll/2024-07-12-quantum_computing.html" />
-        
-    </head>
-    <body>
-        <div class="book"><div class="book-summary">
-    <script type="text/javascript">
-        // Fixes the page links scroll problem on both desktop and mobile browsers
-        function pageScrollToTop(element) {
-            // both mobile and non-mobile
-            $('div.body-inner').animate({scrollTop: 0});
-            $(element).parent().find('li>ul>li').removeClass('active');
-            return true;  // propagate
-        }
-        // Fixes the anchor links scroll problem on mobile browsers
-        function mobilePageScrollToAnchor(element) {
-            $(element).closest('li.chapter').find('ul>li').removeClass('active');
-            $(element).parent().addClass('active');
-            if ($(document).width() <= 1240) {
-                let target = $($(element).attr('href'));
-                if (target.length) {
-                    $('div.body-inner').animate({
-                        scrollTop: target.get(0).offsetTop,
-                    });
-                }
-            }
-            return true;
-        }
-    </script>
-
-    <nav role="navigation">
-        <div id="book-search-input" role="search">
-            <input type="text" placeholder="Type to search" />
-        </div>
-        <div id="book-search-input-link" role="search">
-            <a href="/assets/search.html">Click to Search</a>
-        </div>
-        <ul class="summary">
-            
-            <li class="chapter active" data-level="1.1" data-path="">
-            
-                <a href="/" onclick="pageScrollToTop(this)">
-                    Notebook
-                </a>
-            </li>
-
-            <li class="divider"></li>
-
-            
-                
-                    
-                    <!-- <p>posts</p> -->
-                    
-                        
-
-                        
-                            
-                            <li class="chapter" data-level="1.1" data-path="/jekyll/2024-07-12-quantum_computing.html">
-                            
-                                <a href="/jekyll/2024-07-12-quantum_computing.html" onclick="pageScrollToTop(this)">
-                                    Quantum Computing
-                                </a>
-                                
-                                    
-                                
-                            </li>
-                        
-                            
-                            <li class="chapter" data-level="1.1" data-path="/jekyll/2024-07-12-cryptography.html">
-                            
-                                <a href="/jekyll/2024-07-12-cryptography.html" onclick="pageScrollToTop(this)">
-                                    Cryptography
-                                </a>
-                                
-                                    
-                                
-                            </li>
-                        
-
-                        
-                            <li class="divider"></li>
-                        
-                    
-                
-                    
-                    <!-- <p>pages</p> -->
-                    
-                        
-
-                        
-
-                        
-                    
-                
-                    
-                    <!-- <p>others</p> -->
-                    
-                        
-
-                        
-
-                        
-                    
-                
-            
-        </ul>
-    </nav>
-</div>
-<div class="book-body">
-                <div class="book-header" role="navigation">
-                    <!-- Title -->
-                    <h1>
-                        <i class="fa fa-circle-o-notch fa-spin"></i>
-                        
-                            <a href="." >About</a>
-                        
-                    </h1>
-                </div>
-
-                <div class="body-inner"><div class="page-wrapper" tabindex="-1" role="main">
-    
-
-    <div class="page-inner">
-        <div id="book-search-results">
-            <div class="search-noresults">
-                <section class="normal markdown-section">
-                    
-                        <h1 id="">About</h1>
-                    
-
-                    <p>My name is Victor Krassovsky, this is my online journal where I write about various things.</p>
-
-<p><img src="/assets/Nikolaus_Kopernikus_MOT.jpg" alt="nicolaus copernicus" /></p>
-</section>
-            </div><div class="search-results">
-    <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-        <ul class="search-results-list"></ul>
-    </div>
-    <div class="no-results">
-        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-    </div>
-</div></div>
-    </div>
-</div>
-
-<!-- introduce mathjax support -->
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
-</script>
-<script
-  type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
+<!-- Setup Google Analytics -->
 
 
-<!-- introduce per-page mermaid support -->
 
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
 
-<!-- introduce mathjax support -->
-<script>
-    function fixes_chrome_anchors() {
-        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        if (window.location.hash && chrome) {
-            setTimeout(function () {
-                var hash = window.location.hash;
-                window.location.hash = "";
-                window.location.hash = hash;
-            }, 300);
-        }
-    }
+<!-- end custom head snippets -->
 
-    if (document.readyState === "loading") {
-        // Loading hasn't finished yet
-        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
-    } else {
-        // `DOMContentLoaded` has already fired
-        fixes_chrome_anchors();
-    }
-</script>
-
-<a href="/" class="navigation navigation-pre navigation-unique">
-                        <i class="fa"></i>
-                    </a>
-
-                    
-                        <a href="" class="navigation navigation-next navigation-unique" aria-label="Next page: ">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    
-                </div>
-            </div>
-
-            <script>
-            var gitbook = gitbook || [];
-            gitbook.push(function() {
-                gitbook.page.hasChanged({
-    "page": {
-        "title": "Introduction",
-        "level": "1.1",
-        "depth": 1,
-        
-
-        
-        "next": {
-            "title": "Quantum Computing",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_posts/2024-07-12-quantum_computing.md",
-            "ref": "_posts/2024-07-12-quantum_computing.md",
-            "articles": []
-        },
-        
-        "dir": "ltr"
-    },    "config": {
-        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
-        "styles": {
-            "ebook": "styles/ebook.css",
-            "epub": "styles/epub.css",
-            "mobi": "styles/mobi.css",
-            "pdf": "styles/pdf.css",
-            "print": "styles/print.css",
-            "website": "styles/website.css"
-        },
-        "pluginsConfig": {
-            "expandable-chapter-small2": {
-                "articlesExpand": true,
-            },
-            "fontsettings": {
-                "family": "sans",
-                "size": 2,
-                "theme": "white"
-            },
-            "highlight": {},
-            "livereload": {},
-            "lunr": {
-                "ignoreSpecialCharacters": false,
-                "maxIndexSize": 1000000
-            },
-            "search": {},            "sharing": {
-                "facebook": true,
-
-                "google": false,
-
-                "github": true,
-              
-                "github_link": "https://github.com",
-              
-
-                "telegram": false,
-                "telegram_link": "https://t.me",
-
-                "instapaper": false,
-
-                "twitter": true,
-              
-
-                "vk": false,
-
-                "weibo": false,
-
-                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
-            },
-"theme-default": {
-                "showLevel": false,
-                "styles": {
-                    "ebook": "styles/ebook.css",
-                    "epub": "styles/epub.css",
-                    "mobi": "styles/mobi.css",
-                    "pdf": "styles/pdf.css",
-                    "print": "styles/print.css",
-                    "website": "styles/website.css"
-                }
-            },
-        },
-        "theme": "default",
-        "author": "Tao He",
-        "pdf": {
-            "pageNumbers": true,
-            "fontSize": 12,
-            "fontFamily": "Arial",
-            "paperSize": "a4",
-            "chapterMark": "pagebreak",
-            "pageBreaksBefore": "/",
-            "margin": {
-                "right": 62,
-                "left": 62,
-                "top": 56,
-                "bottom": 56
-            }
-        },
-        "structure": {
-            "langs": "LANGS.md",
-            "readme": "README.md",
-        },
-        "variables": {},
-        "title": "Notebook",
-        "language": "en",
-        "gitbook": "*"
+  </head>
+  <script>
+    window.MathJax = {
+    tex: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
     },
-    "file": {
-        "path": "README.md",
-        "mtime": "",
-        "type": "markdown"
-    },
-    "gitbook": {
-        "version": "3.2.3",
-        "time": "2024-08-07 12:11:21 -0700"
-    },
-    "basePath": "",
-    "book": {
-        "language": ""
-    }
-});
-            });
-            </script>
-        </div><script src="/assets/gitbook/gitbook.js"></script>
-<script src="/assets/gitbook/theme.js"></script>
+	svg: {
+	    fontCache: 'global'
+	}
+    };
+  </script>
+  <script
+    type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-<script src="/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
-<script src="/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
-<script src="/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
-<script src="/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-<script src="/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
-<script src="/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
-<script src="/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
-<script src="/assets/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Victor Krassovsky</h1>
+      <h2 class="project-tagline">Various things</h2>
+      
+      
+    </header>
 
-<!--
-<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-<script src="../gitbook/gitbook-plugin-search/search.js"></script>
--->
+    <main id="content" class="main-content" role="main">
+      <p><a href="quantum_computing">Quantum Computing Notes</a></p>
 
-<script src="/assets/gitbook/custom.js"></script>
-<script src="/assets/gitbook/custom-local.js"></script>
+<p><a href="cryptography">Cryptography Notes</a></p>
 
-</body>
+<p><a href="https://github.com/victorkrassovsky">My github</a></p>
+
+<p>victorkrassovsky [at] hotmail [dot] com</p>
+
+
+      <footer class="site-footer">
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
 </html>
