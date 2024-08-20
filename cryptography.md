@@ -4,7 +4,6 @@ author: Victor Krassovsky
 layout: article
 mermaid: true
 permalink: /cryptography/
-toc: true
 ---
 
 ## Symmetric Encryption
@@ -114,6 +113,8 @@ Furthermore, a PRF $F$ is secure if the set of functions from $X$ to $Y$ determi
 
 
 ### The Data Encryption Standard
+
+
 
 
 

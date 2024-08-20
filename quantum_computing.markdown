@@ -4,7 +4,6 @@ author: Victor Krassovsky
 layout: article
 mermaid: true
 permalink: /quantum_computing/
-toc: true
 ---
 
 ## Quantum Systems
