@@ -31,6 +31,19 @@ remote_theme: pages-themes/cayman@v0.2.0
 plugins:
 - jekyll-remote-theme 
 - jekyll-feed
+- jekyll-toc
+
+# TOC settings
+toc:
+  min_level: 1
+  max_level: 6
+  ordered_list: false
+  no_toc_section_class: no_toc_section
+  list_id: toc
+  list_class: section-nav
+  sublist_class: ''
+  item_class: toc-entry
+  item_prefix: toc-
 
 # Exclude from processing.
 # The following items will not be processed, by default.

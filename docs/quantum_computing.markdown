@@ -1,9 +1,10 @@
 ---
 title: Quantum Computing
 author: Victor Krassovsky
-layout: default
+layout: article
 mermaid: true
 permalink: /quantum_computing/
+toc: true
 ---
 
 ## Quantum Systems

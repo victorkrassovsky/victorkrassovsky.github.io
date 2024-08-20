@@ -1,9 +1,10 @@
 ---
 title: Cryptography
 author: Victor Krassovsky
-layout: default
+layout: article
 mermaid: true
 permalink: /cryptography/
+toc: true
 ---
 
 ## Symmetric Encryption
