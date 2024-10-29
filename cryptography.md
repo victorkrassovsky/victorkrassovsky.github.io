@@ -121,3 +121,4 @@ DES, and later 3DES, utilizes something called a Feistal network to construct a 
 Starting from the top in the encryption diagram, we break our plaintext into two blocks, $L_0$ and $R_0$, then transform succesively according to the rules $L_n=R_{n-1}$ and $R_n=L_{n-1} \oplus F(k_{n-1},R_{n-1})$. Then, we can invert this entire network very easily which is shown in the decryption diagram. In fact, the network is exactly the same, except we flip $R_{n+1}$ and $L_{n+1}$. Hence, if $F$ is a PRF, then the encryption network $E$ and decryption network $D$ form a PRP. Furthermore, a theorem due to Luby-Rackoff ('88) shows that if the Feistel network has at least three layers, then provided that $F$ is a secure PRF, $E$ and $D$ are also secure. 
 
 ### Attacks on DES
+

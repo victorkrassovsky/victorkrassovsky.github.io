@@ -9,6 +9,8 @@ layout: default
 
 [Cryptography Notes](cryptography)
 
+[WXML Concentrations of Measure Poster](../assets/wxml_poster.pdf)
+
 [My github](https://github.com/victorkrassovsky)
 
 victorkrassovsky [at] hotmail [dot] com
