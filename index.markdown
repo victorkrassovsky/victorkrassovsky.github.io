@@ -5,11 +5,11 @@
 layout: default
 ---
 
+[WXML Concentrations of Measure Poster](../assets/wxml_poster.pdf)
+
 [Quantum Computing Notes](quantum_computing)
 
 [Cryptography Notes](cryptography)
-
-[WXML Concentrations of Measure Poster](../assets/wxml_poster.pdf)
 
 [My github](https://github.com/victorkrassovsky)
 
