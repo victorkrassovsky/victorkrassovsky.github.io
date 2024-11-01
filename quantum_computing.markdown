@@ -5,6 +5,7 @@ layout: article
 mermaid: true
 permalink: /quantum_computing/
 ---
+These were some notes I took while self studying quantum computing. 
 
 ## Quantum Systems
 Quantum information systems are built up of four components:

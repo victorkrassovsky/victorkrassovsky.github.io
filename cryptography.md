@@ -5,6 +5,7 @@ layout: article
 mermaid: true
 permalink: /cryptography/
 ---
+These were some notes that I took while taking a course on cryptography. 
 
 ## Symmetric Encryption
 
