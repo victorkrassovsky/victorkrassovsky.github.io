@@ -123,3 +123,24 @@ Starting from the top in the encryption diagram, we break our plaintext into two
 
 ### Attacks on DES
 
+There are a few well known (often succesful) attacks on DES which is why it is no longer used. Usually these attacks require at least a few input output pairs in order to work. The most obvious such attack is an exhaustive key search, in which the attacker acquires a few blocks that were encrypted with the same key and tries to find the key that they were encrypted with. Namely, given $c_1, c_2, c_3$ ciphertexts, find $k\in \\{0,1\\}^{56}$ so that DES$(k,m_i)=c_i$. This works because of the following lemma:  
+
+**Lemma 2.2:** Suppose that DES is an ideal cipher i.e. it consists of $2^{56}$ invertible functions $\pi : \\{0,1\\}^{64}\to\\{0,1\\}^64$. Then, for all messages $m$ and ciphertexts $c$ there is at most one key s.t. $c=\text{DES}(k,m)$ with probability $1-\frac{1}{256}$.  
+*Proof:* We have that 
+$$
+\begin{align*}
+	P(\exists k' \ne k : c=\text{DES}(k,m) = \text{DES}(k',m)) &\le \sum_{k'\in \\{0,1\\}^{56}} P(\text{DES}(k,m)=\text{DES}(k',m))\\
+	&= 2^{56}\cdot\frac{1}{2^{64}}\\
+	&= \frac{1}{256}.
+\end{align*}
+$$
+
+Therefore, given several ciphertexts encrypted with the same key, the probability that there is another key that gives the same ciphertexts quickly becomes very small.  
+
+Since DES's key size is only 56 bits, computers quickly became able to search the entire space in a relatively short amount of time. One idea to fix this was to artificially increase the key size by composing DES multiple times with itself. In particular, the 3DES cipher is defined by $\text{3DES}(m, k) = \text{DES}(\text{DES}^{-1}(\text{DES}(m,k_1),k_2),k_3)$. The key size is now three times as long, so the same exhaustive search attack no longer works. 
+
+One thing to note is that DES composed with itself only once would not provide any additional security. An attacker would simply need to solve the equation $c = \text{DES}(\text{DES}(m,k_1), k_2)$, or $\text{DES}^{-1}(c,k_2) = \text{DES}(m,k_1)$. One could do this by precomputing the left side for all keys $k_2$, and then searching the key space for a $k_1$ that provides a collision. Therefore, the time complexity would only be about $2^{56}\cdot 2=2^{57}$ which is still completely insecure. This type of attack is called a meet-in-the-middle attack. 
+
+There are also some other attacks on DES that are somewhat quicker, but require additional resources, which I will briefly mention. The first is a linear attack, which exploits the fact that one of the S-Boxes in DES was implemented slightly incorrectly. In particular, because one of the S-Boxes is very slightly linear, it introduces a linear relationship between the message and ciphertext. Given many many input ouput pairs, it is possible to compute this relationship which would give you some information about the key, drastically reducing the amount of time it would take to compute it. 
+
+The other attack uses the fact that quantum computers are able to invert functions much quicker than their classical counterparts. In particular, if we are given $m,c=E(k,m)$, and we let $f$ be a function so that $f(k)=1$ if $E(k,m)=c$ and $f(k)=0$ otherwise, a quantum computer would be able to find $k$ so that $f(k)=1$ in time $2^{28}$, in comparison to the classical exhaustive search which takes $2^{56}$.
