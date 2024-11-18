@@ -117,7 +117,7 @@ Furthermore, a PRF $F$ is secure if the set of functions from $X$ to $Y$ determi
 
 DES, and later 3DES, utilizes something called a Feistal network to construct a PRP from a PRF. 
 
-<img src="/assets/Feistel_cipher_diagram.png" alt="diagram" width="400"/>
+<img src="/assets/Feistel_cipher_diagram.png" alt="diagram" width="400" style="display: block; margin-left: auto; margin-right: auto; max-width: 300px; height: auto;"/>
 
 Starting from the top in the encryption diagram, we break our plaintext into two blocks, $L_0$ and $R_0$, then transform succesively according to the rules $L_n=R_{n-1}$ and $R_n=L_{n-1} \oplus F(k_{n-1},R_{n-1})$. Then, we can invert this entire network very easily which is shown in the decryption diagram. In fact, the network is exactly the same, except we flip $R_{n+1}$ and $L_{n+1}$. Hence, if $F$ is a PRF, then the encryption network $E$ and decryption network $D$ form a PRP. Furthermore, a theorem due to Luby-Rackoff ('88) shows that if the Feistel network has at least three layers, then provided that $F$ is a secure PRF, $E$ and $D$ are also secure. 
 
@@ -143,4 +143,14 @@ One thing to note is that DES composed with itself only once would not provide a
 
 There are also some other attacks on DES that are somewhat quicker, but require additional resources, which I will briefly mention. The first is a linear attack, which exploits the fact that one of the S-Boxes in DES was implemented slightly incorrectly. In particular, because one of the S-Boxes is very slightly linear, it introduces a linear relationship between the message and ciphertext. Given many many input ouput pairs, it is possible to compute this relationship which would give you some information about the key, drastically reducing the amount of time it would take to compute it. 
 
-The other attack uses the fact that quantum computers are able to invert functions much quicker than their classical counterparts. In particular, if we are given $m,c=E(k,m)$, and we let $f$ be a function so that $f(k)=1$ if $E(k,m)=c$ and $f(k)=0$ otherwise, a quantum computer would be able to find $k$ so that $f(k)=1$ in time $2^{28}$, in comparison to the classical exhaustive search which takes $2^{56}$.
+The other attack uses the fact that quantum computers are able to invert functions much quicker than their classical counterparts. In particular, if we are given $m,c=E(k,m)$, and we let $f$ be a function so that $f(k)=1$ if $E(k,m)=c$ and $f(k)=0$ otherwise, a quantum computer would be able to find $k$ so that $f(k)=1$ in time $2^{28}$, in comparison to the classical exhaustive search which takes $2^{56}$. 
+
+### Advanced Encryption Standard (AES)
+
+DES was eventually replaced by the NIST with the Advanced Encryption Standard or AES. It supports key sizes of 128, 192 or 256 bits, therefore somewhat future-proofing it against advances in technology and the development of quantum computers. Unlike DES, AES is not a Feistal network. Rather, it is a substitution-permutation network with key-expansion. 
+
+{:refdef: style="display: block; margin-left: auto; margin-right: auto; max-width: 300px; height: auto;"}
+![subpermnet]({{ site.baseimg }}/assets/subpermnet.svg)
+{: refdef}
+
+First the key is expanded into round keys $k_i$. Then, at each layer, we apply a substitution and a permutation followed by a XOR with the round key to the plaintext. Each layer is fully reversable, so to decrypt, we can simply repeat the key expansion algorithm, and follow the layers in reverse order to recover the plaintext. For AES-128, we need 11 round keys for 10 sub-perm layers.
