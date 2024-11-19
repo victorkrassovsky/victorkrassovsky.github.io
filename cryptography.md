@@ -149,8 +149,6 @@ The other attack uses the fact that quantum computers are able to invert functio
 
 DES was eventually replaced by the NIST with the Advanced Encryption Standard or AES. It supports key sizes of 128, 192 or 256 bits, therefore somewhat future-proofing it against advances in technology and the development of quantum computers. Unlike DES, AES is not a Feistal network. Rather, it is a substitution-permutation network with key-expansion. 
 
-{:refdef: style="display: block; margin-left: auto; margin-right: auto; max-width: 300px; height: auto;"}
-![subpermnet]({{ site.baseimg }}/assets/subpermnet.svg)
-{: refdef}
+<img src="/assets/subpermnet.svg" alt="diagram" width="400" style="display: block; margin-left: auto; margin-right: auto; max-width: 300px; height: auto;"/>
 
 First the key is expanded into round keys $k_i$. Then, at each layer, we apply a substitution and a permutation followed by a XOR with the round key to the plaintext. Each layer is fully reversable, so to decrypt, we can simply repeat the key expansion algorithm, and follow the layers in reverse order to recover the plaintext. For AES-128, we need 11 round keys for 10 sub-perm layers.
