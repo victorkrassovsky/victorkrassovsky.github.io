@@ -151,4 +151,5 @@ DES was eventually replaced by the NIST with the Advanced Encryption Standard or
 
 <img src="/assets/subpermnet.svg" alt="diagram" width="400" style="display: block; margin-left: auto; margin-right: auto; max-width: 300px; height: auto;"/>
 
-First the key is expanded into round keys $k_i$. Then, at each layer, we apply a substitution and a permutation followed by a XOR with the round key to the plaintext. Each layer is fully reversable, so to decrypt, we can simply repeat the key expansion algorithm, and follow the layers in reverse order to recover the plaintext. For AES-128, we need 11 round keys for 10 sub-perm layers.
+First the key is expanded into round keys $k_i$. Then, at each layer, we apply a substitution and a permutation followed by a XOR with the round key to the plaintext. Each layer is fully reversable, so to decrypt, we can simply repeat the key expansion algorithm, and follow the layers in reverse order to recover the plaintext. For AES-128, we need 11 round keys for 10 sub-perm layers. I have a full implementation of AES-128 <a href="https://github.com/victorkrassovsky/cryptography">here.</a>
+
