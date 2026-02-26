@@ -4,7 +4,7 @@
 
 layout: default
 ---
-[WXML Feasible Points in Highly Constrained Simulation-based Optimization Problems](../assets/WXML_Poster__Highly_constrained_simulation_optimization_problems.pdf)
+[WXML Feasible Points in Highly Constrained Simulation-based Optimization Problems](../assets/feasible_points.pdf)
 
 [WXML Concentrations of Measure Poster](../assets/wxml_poster.pdf)
 
